@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+#microservice specific properties to register with eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: PRODUCT-SERVICE
+
+  # provide the url of the config server to get the repo details
+  # no trailing slash after localhost
+  config:
+    import: configserver:http://localhost:8888
+  profiles:
+    active: dev, prod
+
+
+
+
+#datasourse specific properties
+
+#  datasource:
+#    username: root
+#    password: root
+#    url: jdbc:mysql://localhost:3306/training
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#    database-platform: org.hibernate.dialect.MySQL5Dialect
+

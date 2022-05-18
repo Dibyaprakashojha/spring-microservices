@@ -1,0 +1,10 @@
+server:
+  port: 8888
+ # this config server connects the git repository using the given url
+spring:
+  cloud:
+    config:
+      server:
+        git:
+#          uri: C://Users/DibyaPrakashOjha/OneDrive - acheron-tech.com/Documents/training/microgitrepository/
+           uri: https://github.com/Dibyaprakashojha/microgitrepository.git

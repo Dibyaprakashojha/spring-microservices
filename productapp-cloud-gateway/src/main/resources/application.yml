@@ -1,0 +1,28 @@
+server:
+  port: 9000
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761
+
+spring:
+  application:
+    name: GATEWAY-API
+
+#declarative routes
+  cloud:
+    gateway:
+      routes:
+        - id: productService
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/product-api/**
+        - id: cartService
+          uri: lb://CART-SERVICE
+          predicates:
+            - Path=/cart-api/**
+        - id: orderService
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/order-api/**
